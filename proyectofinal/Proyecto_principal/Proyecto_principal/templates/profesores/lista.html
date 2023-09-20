@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Lista de Profesores</h2>
+  <ul>
+    {% for profesor in profesores %}
+      <li>
+        <a href="{% url 'detalle_profesor' profesor.id %}">{{ profesor.user.username }}</a>
+        <img src="{{ profesor.avatar.url }}" alt="{{ profesor.user.username }} Avatar" width="100" height="100">
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'registrar_profesor' %}">Registrar un nuevo profesor</a>
+{% endblock %}

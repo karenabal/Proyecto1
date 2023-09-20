@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Panel de Administrador</h2>
+  <!-- Otros elementos específicos para el panel de administrador, si es necesario -->
+
+  <h3>Gestión de Alumnos:</h3>
+  <ul>
+    <li><a href="{% url 'lista_alumnos' %}">Ver lista de Alumnos</a></li>
+    <li><a href="{% url 'editar_alumno' alumno.id %}">Editar Alumno</a></li>
+    <li><a href="{% url 'eliminar_alumno' alumno.id %}">Eliminar Alumno</a></li>
+  </ul>
+
+  <h3>Gestión de Profesores:</h3>
+  <ul>
+    <li><a href="{% url 'lista_profesores' %}">Ver lista de Profesores</a></li>
+    <li><a href="{% url 'editar_profesor' profesor.id %}">Editar Profesor</a></li>
+    <li><a href="{% url 'eliminar_profesor' profesor.id %}">Eliminar Profesor</a></li>
+  </ul>
+
+  <h3>Gestión de Cursos:</h3>
+  <ul>
+    <li><a href="{% url 'lista_cursos' %}">Ver lista de Cursos</a></li>
+    <li><a href="{% url 'editar_curso' curso.id %}">Editar Curso</a></li>
+    <li><a href="{% url 'eliminar_curso' curso.id %}">Eliminar Curso</a></li>
+  </ul>
+{% endblock %}

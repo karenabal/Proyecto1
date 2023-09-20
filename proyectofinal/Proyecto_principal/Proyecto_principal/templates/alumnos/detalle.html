@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Detalle del Alumno</h2>
+  <h3>{{ alumno.user.username }}</h3>
+  <p>Fecha de Nacimiento: {{ alumno.fecha_nacimiento }}</p>
+  <img src="{{ alumno.avatar.url }}" alt="{{ alumno.user.username }} Avatar" width="200" height="200">
+  <a href="{% url 'editar_alumno' alumno.id %}">Editar</a>
+  <a href="{% url 'eliminar_alumno' alumno.id %}">Eliminar</a>
+  <a href="{% url 'lista_alumnos' %}">Volver a la lista de alumnos</a>
+{% endblock %}

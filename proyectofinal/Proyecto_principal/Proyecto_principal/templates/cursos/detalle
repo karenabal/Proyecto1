@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Detalle del Curso</h2>
+  <h3>{{ curso.nombre }}</h3>
+  <p>Descripción: {{ curso.descripcion }}</p>
+  <p>Profesor: {{ curso.profesor.user.username }}</p>
+  <h4>Alumnos Inscriptos:</h4>
+  <ul>
+    {% for alumno in curso.alumnos.all %}
+      <li>{{ alumno.user.username }}</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'editar_curso' curso.id %}">Editar</a>
+  <a href="{% url 'eliminar_curso' curso.id %}">Eliminar</a>
+  <a href="{% url 'lista_cursos' %}">Volver a la lista de cursos</a>
+{% endblock %}

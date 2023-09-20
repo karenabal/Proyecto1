@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Lista de Alumnos</h2>
+  <ul>
+    {% for alumno in alumnos %}
+      <li>
+        <a href="{% url 'detalle_alumno' alumno.id %}">{{ alumno.user.username }}</a>
+        <img src="{{ alumno.avatar.url }}" alt="{{ alumno.user.username }} Avatar" width="100" height="100">
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'registrar_alumno' %}">Registrar un nuevo alumno</a>
+{% endblock %}

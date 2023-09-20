@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Detalle del Profesor</h2>
+  <h3>{{ profesor.user.username }}</h3>
+  <p>Especialidad: {{ profesor.especialidad }}</p>
+  <img src="{{ profesor.avatar.url }}" alt="{{ profesor.user.username }} Avatar" width="200" height="200">
+  <a href="{% url 'editar_profesor' profesor.id %}">Editar</a>
+  <a href="{% url 'eliminar_profesor' profesor.id %}">Eliminar</a>
+  <a href="{% url 'lista_profesores' %}">Volver a la lista de profesores</a>
+{% endblock %}

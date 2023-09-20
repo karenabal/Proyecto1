@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Panel de Usuario</h2>
+  <!-- Otros elementos específicos para el panel de usuario, si es necesario -->
+
+  <!-- Enlace a la lista de cursos -->
+  <a href="{% url 'lista_cursos' %}">Ver lista de Cursos</a><br>
+
+  <!-- Formulario de búsqueda de cursos -->
+  <form method="get" action="{% url 'buscar_curso' %}">
+    <input type="text" name="nombre" placeholder="Buscar Curso">
+    <button type="submit">Buscar</button>
+  </form><br>
+{% endblock %}
+

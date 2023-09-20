@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Lista de Cursos</h2>
+  <ul>
+    {% for curso in cursos %}
+      <li>
+        <a href="{% url 'detalle_curso' curso.id %}">{{ curso.nombre }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'registrar_curso' %}">Registrar un nuevo curso</a>
+{% endblock %}
+
